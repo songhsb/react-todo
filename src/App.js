@@ -24,8 +24,9 @@ const App = () => {
     setTitle("");
     setDetail("");
   };
-  const removeBtnHandler = (event) => {
-    alert("삭제하기");
+  const removeBtnHandler = (id) => {
+    const newToDoCard = toDoCard.filter((card) => card.id !== id);
+    setToDoCard(newToDoCard);
   };
 
   return (
@@ -45,7 +46,9 @@ const App = () => {
               <div key={card.id}>
                 <h3>{card.title}</h3>
                 <p>{card.detail}</p>
-                <button onClick={removeBtnHandler}>삭제하기</button>
+                <button onClick={() => removeBtnHandler(card.id)}>
+                  삭제하기
+                </button>
                 <button>완료</button>
               </div>
             );
