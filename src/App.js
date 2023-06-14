@@ -43,14 +43,11 @@ const App = () => {
         <div>
           {toDoCard.map(function (card) {
             return (
-              <div key={card.id}>
-                <h3>{card.title}</h3>
-                <p>{card.detail}</p>
-                <button onClick={() => removeBtnHandler(card.id)}>
-                  삭제하기
-                </button>
-                <button>완료</button>
-              </div>
+              <ToDoList
+                key={card.id}
+                card={card}
+                removeBtnHandler={removeBtnHandler}
+              />
             );
           })}
         </div>
@@ -58,6 +55,17 @@ const App = () => {
       <div>
         <h2>Done..! 🎉</h2>
       </div>
+    </div>
+  );
+};
+
+const ToDoList = ({ card, removeBtnHandler }) => {
+  return (
+    <div key={card.id}>
+      <h3>{card.title}</h3>
+      <p>{card.detail}</p>
+      <button onClick={() => removeBtnHandler(card.id)}>삭제하기</button>
+      <button>완료</button>
     </div>
   );
 };
