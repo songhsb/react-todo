@@ -1,4 +1,3 @@
-import React from "react";
 import "./style/Layout.css";
 
 function Layout(props) {
