@@ -39,10 +39,10 @@ const App = () => {
     setTitle("");
     setDetail("");
   };
-  const removeBtnHandler = (id) => {
-    const newToDoCard = toDoCard.filter((card) => card.id !== id);
-    setToDoCard(newToDoCard);
-  };
+  // const removeBtnHandler = (id) => {
+  //   const newToDoCard = toDoCard.filter((card) => card.id !== id);
+  //   setToDoCard(newToDoCard);
+  // };
 
   return (
     <div className="layout">
@@ -77,7 +77,6 @@ const App = () => {
                   card={card}
                   toDoCard={toDoCard}
                   setToDoCard={setToDoCard}
-                  removeBtnHandler={removeBtnHandler}
                   DoneBtn={DoneBtn}
                 />
               )
@@ -94,7 +93,6 @@ const App = () => {
                   card={card}
                   toDoCard={toDoCard}
                   setToDoCard={setToDoCard}
-                  removeBtnHandler={removeBtnHandler}
                   DoneBtn={DoneBtn}
                 />
               )
@@ -115,13 +113,12 @@ function Header() {
   );
 }
 
-const ToDoList = ({
-  card,
-  removeBtnHandler,
-  toDoCard,
-  setToDoCard,
-  DoneBtn,
-}) => {
+const ToDoList = ({ card, toDoCard, setToDoCard, DoneBtn }) => {
+  const removeBtnHandler = (id) => {
+    const newToDoCard = toDoCard.filter((card) => card.id !== id);
+    setToDoCard(newToDoCard);
+  };
+
   return (
     <div className="todo-container" key={card.id}>
       <div>
