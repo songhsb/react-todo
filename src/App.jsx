@@ -28,7 +28,7 @@ const App = () => {
   };
 
   const addBtnHandler = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     const newToDoCard = {
       id: toDoCard[toDoCard.length - 1].id + 1,
       title,
@@ -47,7 +47,7 @@ const App = () => {
   return (
     <div className="layout">
       <Header />
-      <div className="add-form">
+      <form className="add-form">
         <div className="input-group">
           <label className="form-label">제목</label>
           <input
@@ -65,7 +65,7 @@ const App = () => {
         <button className="add-button" onClick={addBtnHandler}>
           추가하기
         </button>
-      </div>
+      </form>
       <div className="list-container">
         <h2>Working.. 🔥</h2>
         <div className="list-wrapper">
