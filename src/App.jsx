@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
+import Layout from "./components/Layout";
+import Header from "./components/Header";
 
 const App = () => {
   const [toDoCard, setToDoCard] = useState([
@@ -39,13 +41,9 @@ const App = () => {
     setTitle("");
     setDetail("");
   };
-  // const removeBtnHandler = (id) => {
-  //   const newToDoCard = toDoCard.filter((card) => card.id !== id);
-  //   setToDoCard(newToDoCard);
-  // };
 
   return (
-    <div className="layout">
+    <Layout>
       <Header />
       <form className="add-form">
         <div className="input-group">
@@ -100,18 +98,9 @@ const App = () => {
           })}
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
-
-function Header() {
-  return (
-    <div className="container">
-      <div>My Todo List</div>
-      <div>React</div>
-    </div>
-  );
-}
 
 const ToDoList = ({ card, toDoCard, setToDoCard, DoneBtn }) => {
   const removeBtnHandler = (id) => {

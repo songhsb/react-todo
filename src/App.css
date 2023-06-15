@@ -1,18 +1,3 @@
-.layout {
-  max-width: 1200px;
-  min-width: 800px;
-  margin: 0 auto;
-}
-
-.container {
-  border: 1px solid #ddd;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
 .add-form {
   background-color: #eee;
   border-radius: 12px;
